@@ -25,6 +25,13 @@ public class FolhaPagamento {
     
     public void InfoFolhaP(Funcionario func,Imposto fgts,Imposto inss){
         InsereFormaPagamento();
+        System.out.println("INFORMAÇÕES DO FUNCIONARIO");
+        System.out.println("Funcionario: %s",Funcionario.Nome_F);
+        System.out.println("Cpf: %i",Funcionario.Cpf_F);
+        System.out.println("Pis: %i",Funcionario.Pis_F);
+        System.out.println("Endereço: %s",Funcionario.Endereço_F);
+        System.out.println("Contato: (%i)%i",Funcionario.DDD_F,Funcionario.Telefone_F);
+        System.out.println("INFORMAÇÕES SOBRE O PAGAMENTO");
         System.out.println("Dia do Pagamento:  %d/%d/%d",func.dia,func.mes,func.ano);
         System.out.println("Salario Bruto: %f",func.salario);
         System.out.println("Dedução do INSS:  %f",CalcularFgts(func,inss));
