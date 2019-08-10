@@ -27,6 +27,7 @@ public class FolhaPagamento {
         InsereFormaPagamento();
         System.out.println("INFORMAÇÕES DO FUNCIONARIO");
         System.out.println("Funcionario: %s",Funcionario.Nome_F);
+        System.out.println("Setor: %s",Funcionario.Setor_F);
         System.out.println("Cpf: %i",Funcionario.Cpf_F);
         System.out.println("Pis: %i",Funcionario.Pis_F);
         System.out.println("Endereço: %s",Funcionario.Endereço_F);
