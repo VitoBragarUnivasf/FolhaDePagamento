@@ -1,0 +1,9 @@
+Insert into funcionario values ('Jaime Rodrigues Araújo', 09878746402,  200, 'Juazeiro', 'Loteamento Recife', 'Rua 10','PERNAMBUCO', 087,12344321 );
+
+Insert into setor values ('Logística', 'Supervinilda',  1 , 'Petrolina', 'Loteamento Recife', 'Rua 30','PERNAMBUCO', 087,333334321 );
+
+Insert into cargo values ('Estagiário', 1,  657.00 ,  5.47);
+
+Insert into funcionario_cargo values (1, 09878746402,   TO_DATE('10/10/2018','MM/DD/YYYY') ,null);
+
+Insert into pagamento values (09878746402, 1, TO_DATE('10/1/2019','MM/DD/YYYY'),null,null,null,null,null,null,null,null,null);
