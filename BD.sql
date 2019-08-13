@@ -2,26 +2,14 @@ CREATE TABLE Funcionario
 (
 Nome_F varchar(50) NOT NULL,
 pk_Cpf_F number(11) primary key,
-Pis_F number(11) NOT NULL,
-cidade_F varchar(50) NOT NULL,
-bairro_F varchar(50) NOT NULL,
-rua_F varchar(50) NOT NULL,
-estado_F varchar(50) NOT NULL,
-ddd_F number(3) NOT NULL,
-telefone_F number(9) NOT NULL
+status varchar(50) NULL
 );
 
 CREATE TABLE Setor
 (
-Nome_S varchar(50) NOT NULL,
-Nome_S_Supervisor varchar(50) NOT NULL,
 Cod_S number(4) PRIMARY KEY,
-cidade_S varchar(50) NOT NULL,
-bairro_S varchar(50) NOT NULL,
-rua_S varchar(50) NOT NULL,
-estado_S varchar(50) NOT NULL,
-ddd_S number(3) NOT NULL,
-telefone_S number(9) NOT NULL
+Nome_S varchar(50) NOT NULL,
+Descricao varchar(255) NOT NULL
 );
 
 CREATE TABLE Cargo
@@ -29,7 +17,9 @@ CREATE TABLE Cargo
 Nome_C varchar(50) NOT NULL,
 Cod_C number(4) PRIMARY KEY,
 Valor_base number(9,2) NOT NULL,
-Valor_horaTrab number(9,2) NOT NULL
+Valor_horaTrab number(9,2) NOT NULL,
+Carga_horaria number(9) NOT NULL,
+vinculo varchar(50) NOT NULL
 );
 
 CREATE TABLE Funcionario_Cargo
@@ -78,6 +68,10 @@ CONSTRAINT Fk_pk_CpfF FOREIGN KEY (Fk_pk_Cpf_F)
 REFERENCES Funcionario (pk_Cpf_f),
 CONSTRAINT pk_Pagamento PRIMARY KEY (Fk_pk_Cpf_F,Cod_P)
 );
+
+create sequence setor_seq minvalue 1 maxvalue 9999999999 start with 1 increment by 1 nocache cycle;
+create sequence cargo_seq minvalue 1 maxvalue 9999999999 start with 1 increment by 1 nocache cycle;
+create sequence pagamento_seq minvalue 1 maxvalue 9999999999 start with 1 increment by 1 nocache cycle;
 
 CREATE OR REPLACE TRIGGER Horario_de_trabalho
 BEFORE INSERT OR UPDATE OR DELETE ON Pagamento
